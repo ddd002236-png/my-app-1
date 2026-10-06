@@ -1,0 +1,12 @@
+import React from "react";
+
+export default function AboutPage() {
+  return (
+    <div>
+      <h1>이 페이지는 app/about/page.tsx 입니다. </h1>
+      <p>{name}</p>
+
+      <Link href="/"> Home으로 이동하기 </Link>
+    </div>
+  );
+}
