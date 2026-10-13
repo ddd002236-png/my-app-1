@@ -1,18 +1,18 @@
-'use client'
+"use client";
 
-import { useState, useTransition } from 'react'
-import { Button } from '@/components/ui/button'
-import { likeProductAction } from '@/lib/actions'
+import { useState, useTransition } from "react";
+import { Button } from "@/components/ui/button";
+import { likeProductAction } from "@/lib/actions";
 
 export function LikeButton({
   id,
   initialLikes,
 }: {
-  id: string
-  initialLikes: number
+  id: string;
+  initialLikes: number;
 }) {
-  const [likes, setLikes] = useState(initialLikes)
-  const [isPending, startTransition] = useTransition()
+  const [likes, setLikes] = useState(initialLikes);
+  const [isPending, startTransition] = useTransition();
 
   return (
     <Button
@@ -20,12 +20,12 @@ export function LikeButton({
       disabled={isPending}
       onClick={() => {
         startTransition(async () => {
-          const newLikes = await likeProductAction(id)
-          setLikes(newLikes)
-        })
+          const newLikes = await likeProductAction(id);
+          setLikes(newLikes);
+        });
       }}
     >
-      {isPending ? '저장 중...' : `♥ 좋아요 ${likes}`}
+      {isPending ? "저장 중..." : `♥ 좋아요 ${likes}`}
     </Button>
-  )
+  );
 }
