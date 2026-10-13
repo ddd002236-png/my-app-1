@@ -18,26 +18,38 @@ export default function Home() {
 
         <Counter />
 
-        <Link
-          href="/about"
-          className="text-sm font-medium text-zinc-950 underline underline-offset-4 dark:text-zinc-50"
-        >
-          /about 페이지로 이동 (파일 기반 라우팅 확인) →
-        </Link>
-
-        <Link
-          href="/products"
-          className="text-sm font-medium text-zinc-950 underline underline-offset-4 dark:text-zinc-50"
-        >
-          /products 페이지로 이동 (파일 기반 라우팅 확인) →
-        </Link>
-
-        <Link
-          href="/notices"
-          className="text-sm font-medium text-zinc-950 underline underline-offset-4 dark:text-zinc-50"
-        >
-          /notices 페이지로 이동 (파일 기반 라우팅 확인) →
-        </Link>
+        <div className="flex flex-col gap-2 text-sm">
+          <Link
+            href="/notices"
+            className="font-medium text-zinc-950 underline underline-offset-4 dark:text-zinc-50"
+          >
+            /notices — 이번 학기 코스 프로젝트: 공지사항 게시판 →
+          </Link>
+          <Link
+            href="/register"
+            className="font-medium text-zinc-950 underline underline-offset-4 dark:text-zinc-50"
+          >
+            /register — Auth.js 회원가입 (비밀번호 해싱) →
+          </Link>
+          <Link
+            href="/about"
+            className="font-medium text-zinc-950 underline underline-offset-4 dark:text-zinc-50"
+          >
+            /about — File-based Routing 확인 →
+          </Link>
+          <Link
+            href="/products"
+            className="font-medium text-zinc-950 underline underline-offset-4 dark:text-zinc-50"
+          >
+            /products — 비동기 데이터 페칭 + Suspense(loading.tsx) →
+          </Link>
+          <Link
+            href="/api/hello"
+            className="font-medium text-zinc-950 underline underline-offset-4 dark:text-zinc-50"
+          >
+            /api/hello — Route Handler가 응답하는 JSON 확인 →
+          </Link>
+        </div>
       </main>
     </div>
   );
