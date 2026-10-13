@@ -1,14 +1,44 @@
+import Link from "next/link";
 import { Counter } from "@/components/Counter";
 
 export default function Home() {
-  const name = "Hello About";
   return (
-    <main>
-      <h1>웹서버보안프로그래밍</h1>
-      <Counter />
-      <br />
+    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
+      <main className="flex flex-1 w-full max-w-2xl flex-col items-center justify-center gap-8 py-24 px-8 text-center">
+        <span className="rounded-full bg-black/[.06] px-3 py-1 text-xs font-medium tracking-wide text-zinc-600 dark:bg-white/[.08] dark:text-zinc-300">
+          Server Component
+        </span>
 
-      <Link href="/about"> /About 페이지로 이동하기 </Link>
-    </main>
+        <h1 className="text-3xl font-semibold tracking-tight text-black dark:text-zinc-50">
+          웹서버보안프로그래밍 — 유한서
+        </h1>
+        <p className="max-w-md text-base leading-7 text-zinc-600 dark:text-zinc-400">
+          웹서버 강의 유한서
+        </p>
+
+        <Counter />
+
+        <Link
+          href="/about"
+          className="text-sm font-medium text-zinc-950 underline underline-offset-4 dark:text-zinc-50"
+        >
+          /about 페이지로 이동 (파일 기반 라우팅 확인) →
+        </Link>
+
+        <Link
+          href="/products"
+          className="text-sm font-medium text-zinc-950 underline underline-offset-4 dark:text-zinc-50"
+        >
+          /products 페이지로 이동 (파일 기반 라우팅 확인) →
+        </Link>
+
+        <Link
+          href="/notices"
+          className="text-sm font-medium text-zinc-950 underline underline-offset-4 dark:text-zinc-50"
+        >
+          /notices 페이지로 이동 (파일 기반 라우팅 확인) →
+        </Link>
+      </main>
+    </div>
   );
 }
