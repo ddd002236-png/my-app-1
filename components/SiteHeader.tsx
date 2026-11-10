@@ -19,23 +19,14 @@ export async function SiteHeader() {
   return (
     <header className="border-b border-black/[.08] dark:border-white/[.145]">
       <div className="mx-auto flex max-w-2xl items-center justify-between px-8 py-4">
-        <Link
-          href="/"
-          className="text-sm font-semibold text-black dark:text-zinc-50"
-        >
+        <Link href="/" className="text-sm font-semibold text-black dark:text-zinc-50">
           웹서버보안프로그래밍
         </Link>
         <nav className="flex items-center gap-4 text-sm text-zinc-600 dark:text-zinc-400">
-          <Link
-            href="/products"
-            className="hover:text-black dark:hover:text-zinc-50"
-          >
+          <Link href="/products" className="hover:text-black dark:hover:text-zinc-50">
             상품
           </Link>
-          <Link
-            href="/cart"
-            className="hover:text-black dark:hover:text-zinc-50"
-          >
+          <Link href="/cart" className="hover:text-black dark:hover:text-zinc-50">
             장바구니
             {cartCount > 0 && (
               <span className="ml-1.5 rounded-full bg-black px-1.5 py-0.5 text-[10px] font-semibold text-white dark:bg-white dark:text-black">
@@ -43,10 +34,7 @@ export async function SiteHeader() {
               </span>
             )}
           </Link>
-          <Link
-            href="/notices"
-            className="hover:text-black dark:hover:text-zinc-50"
-          >
+          <Link href="/notices" className="hover:text-black dark:hover:text-zinc-50">
             공지사항
           </Link>
           <Link
@@ -57,6 +45,9 @@ export async function SiteHeader() {
           </Link>
           {session?.user ? (
             <div className="flex items-center gap-3">
+              <Link href="/orders" className="hover:text-black dark:hover:text-zinc-50">
+                주문내역
+              </Link>
               <span className="text-zinc-500 dark:text-zinc-400">
                 {session.user.name}님
                 {session.user.role === "admin" && (
